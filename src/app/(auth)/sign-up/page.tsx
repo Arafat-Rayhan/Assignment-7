@@ -2,7 +2,7 @@
 
 
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
-import { signUp } from "../../lib/auth-client";
+import { signUp,signIn } from '@/app/lib/auth-client';
 
 const SignUpPage = () => {
    const onSubmit = async(e: React.SyntheticEvent<HTMLFormElement>) => {
@@ -21,9 +21,24 @@ const SignUpPage = () => {
     email: data.email,  
     password:  data.password, 
     callbackURL:'/sign-in',
-});
+    });
     console.log('After',resData,error);
   }
+
+    const hendelSubmitWithGogoole=async()=>{
+        const resData= await signIn.social({
+            provider:"google"
+        })
+        console.log(resData);
+    }
+    const hendelSubmitWithGithub=async()=>{
+        const resData= await signIn.social({
+            provider:"github"
+        })
+        console.log(resData);
+    }
+
+
     return (
         <div>
            <Form
@@ -93,6 +108,11 @@ const SignUpPage = () => {
         </Button>
       </div>
     </Form>
+        <div className="flex gap-1">
+
+        <Button onClick={hendelSubmitWithGogoole}>sign with gogoole</Button>
+        <Button onClick={hendelSubmitWithGithub}>sign with github</Button>
+        </div>
         </div>
     );
 };

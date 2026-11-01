@@ -4,7 +4,7 @@ import Card from '@/component/layout/card'
 const CardPalase =async () => {
     const data:foodData[] = await getDataByAllBazarProduct()
     return (
-        <div className='grid grid-cols-1 mx-auto gap-2'>
+        <div className='w-[1160px] mx-auto gap-2'>
              <div >
                 <h2>🔼 আজ দাম বেড়েছে</h2>
                 <div className='grid grid-cols-3 gap-2 mx-auto'>

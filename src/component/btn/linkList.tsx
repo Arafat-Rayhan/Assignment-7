@@ -1,5 +1,5 @@
 
-import { getDataByAllCatagories } from '../getData/allData';
+import { getDataByAllCatagories } from '@/component/getData/allData';
 import LinkOn from '@/component/btn/linkOn'
  
  type DataOfC={

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Serif_Bengali } from "next/font/google";
 import Navbar from '@/component/ui/navbar'
+import Footer from '@/component/ui/footer'
 import "./globals.css";
 
 const notoSerifBengali = Noto_Serif_Bengali({
@@ -20,9 +21,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${notoSerifBengali.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#FAFCFA]">
         <Navbar />
         {children}
+        <Footer />
         </body>
     </html>
   );

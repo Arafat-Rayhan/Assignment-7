@@ -1,8 +1,11 @@
 import { foodData } from "@/type/type";
+import Link from 'next/link';
 
 const card = ({C}:{C:foodData}) => {
     return (
         // main
+        <div>
+            <Link href={`/detail/${C.id}`}>
         <div className="w-[360px] bg-[#F0F5F0] rounded-[16px] p-[16px]">
             <div>
                 
@@ -20,6 +23,8 @@ const card = ({C}:{C:foodData}) => {
                     <span className="mx-1">{`${C.change.dir==="up"?`🔼${C.change.pct}%` :`🔻${C.change.pct}%`}`}</span>
                 </div>
             </div>
+        </div>
+            </Link>
         </div>
     );
 };

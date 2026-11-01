@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'api.api-store.workers.dev',
+        hostname: '',
         port: '',
         search: '',
       },

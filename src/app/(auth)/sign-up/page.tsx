@@ -3,6 +3,7 @@
 
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import { signUp,signIn } from '@/app/lib/auth-client';
+import Link from 'next/link'
 
 const SignUpPage = () => {
    const onSubmit = async(e: React.SyntheticEvent<HTMLFormElement>) => {
@@ -40,12 +41,26 @@ const SignUpPage = () => {
 
 
     return (
-        <div>
+      
+        <div className=" h-[520px]" >
+            {/* heder */}
+            <div className="mx-auto mb-5 max-w-md text-center">
+          <h1 className="text-2xl font-bold text-gray-800">
+            অ্যাকাউন্ট তৈরি করুন
+          </h1>
+
+              <p className="mt-1 text-xs text-gray-500">
+                বিনামূল্যে সাইন আপ করে আমাদের সুবিধা নিন
+              </p>
+             </div>
+
+        {/* from start */}
+        <div className='<div className="mx-auto max-w-md rounded-xl border border-gray-200 bg-white p-5 shadow-sm'>
            <Form
-      className="flex w-96 flex-col gap-4"
+       className="space-y-4"
       render={(props) => <form {...props} data-custom="foo" />}
       onSubmit={onSubmit}
-    >
+      >
         <TextField
             isRequired
             name="name"
@@ -56,8 +71,9 @@ const SignUpPage = () => {
               return null;
             }}
           >
-            <Label>Name</Label>
-            <Input placeholder="John Doe" />
+            <Label className="mb-1.5 block text-sm font-medium text-gray-700"> নাম</Label>
+            <Input placeholder="John Doe" 
+             className={ 'w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-green-500 focus:ring-2 focus:ring-green-100'} />
             <FieldError />
           </TextField>
       <TextField
@@ -71,8 +87,9 @@ const SignUpPage = () => {
           return null;
         }}
       >
-        <Label>Email</Label>
-        <Input placeholder="john@example.com" />
+        <Label className="mb-1.5 block text-sm font-medium text-gray-700"> ইমেইল</Label>
+        <Input placeholder="john@example.com" 
+         className={ 'w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-green-500 focus:ring-2 focus:ring-green-100'} />
         <FieldError />
       </TextField>
       <TextField
@@ -93,28 +110,90 @@ const SignUpPage = () => {
           return null;
         }}
       >
-        <Label>Password</Label>
-        <Input placeholder="Enter your password" />
-        <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
+        <Label className="mb-1.5 block text-sm font-medium text-gray-700">পাসওয়ার্ড</Label>
+        <Input placeholder="Enter your password"
+         className={ 'w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-green-500 focus:ring-2 focus:ring-green-100'}  />
         <FieldError />
       </TextField>
-      <div className="flex gap-2">
-        <Button type="submit">
+         
+      <TextField
+        isRequired
+        minLength={8}
+        name="password"
+        type="password"
+        validate={(value) => {
+          if (value!==value){
+            return "not match"
+          } 
+          return null;
+        }}
+      >
+        <Label className="mb-1.5 block text-sm font-medium text-gray-700">পাসওয়ার্ড নিশ্চিত করুন</Label>
+        <Input placeholder="Enter your password"
+        className={ 'w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-green-500 focus:ring-2 focus:ring-green-100'} />
+        <FieldError />
+      </TextField>
+
+          {/* 2 btn */}
+          <div className="flex gap-2">
+        <Button type="submit"
+        className="w-full rounded-md bg-green-600 py-2.5 text-sm font-medium text-white transition hover:bg-green-700 active:scale-[0.99]">
         
           Submit
         </Button>
-        <Button type="reset" variant="secondary">
+        <Button type="reset" variant="secondary"
+        className="w-full rounded-md bg-green-600 py-2.5 text-sm font-medium text-white transition hover:bg-green-700 active:scale-[0.99]">
           Reset
         </Button>
-      </div>
-    </Form>
+          </div>
+
+              {/* or title */}
+           <div className="my-4 flex items-center gap-3">
+          <div className="h-px flex-1 bg-gray-200"></div>
+
+          <span className="text-xs text-gray-400">অথবা</span>
+
+          <div className="h-px flex-1 bg-gray-200"></div>
+            </div>
+
+
+         {/* social  */}
         <div className="flex gap-1">
 
-        <Button onClick={hendelSubmitWithGogoole}>sign with gogoole</Button>
-        <Button onClick={hendelSubmitWithGithub}>sign with github</Button>
+        <Button onClick={hendelSubmitWithGogoole}
+         className="flex items-center justify-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 transition hover:bg-gray-50">
+           <span className="font-bold text-red-500">𝐆</span>sign with gogoole</Button>
+        <Button onClick={hendelSubmitWithGithub}
+         className="flex items-center justify-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 transition hover:bg-gray-50"> <span className="font-bold text-gray-800">🐈‍⬛</span>sign with github</Button>
         </div>
-        </div>
-    );
-};
 
-export default SignUpPage;
+          {/* have you one */}
+        <div>
+        <p className="mt-4 text-center text-xs text-gray-500">
+          অ্যাকাউন্ট আছে?
+          <Link
+            href="/sign-in"
+            className="font-medium text-green-600 hover:underline"
+            >
+            সাইন ইন করুন
+          </Link>
+        </p>
+        </div>
+
+
+            </Form>
+          </div>
+
+         {/* go to home page */}
+        <div className="mt-5 text-center">
+          <Link href="/" className="text-xs text-gray-400 transition hover:text-gray-600" >
+            ← হোম পেজে ফিরে যান </Link>
+        </div>
+        
+      
+        
+      </div>
+
+      )}
+
+      export default SignUpPage;

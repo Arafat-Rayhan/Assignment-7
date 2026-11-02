@@ -1,5 +1,6 @@
 import Clock from '@/component/watchOfTime/clock'
 import Image from 'next/image'
+import ScrolingBtn from '@/component/btn/viewBtn'
 const Benner = () => {
     return (
        <div className='flex justify-between w-280 mx-auto bg-[#FAFCFA] border border-solid border-[#E1E8E1]         rounded-[24px] p-1 my-[24px]'>
@@ -13,7 +14,7 @@ const Benner = () => {
                         <p className='font-normal text-base text-[#1D271F]'>চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক বিস্তারিত, গড়,   <br />    সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।</p>
                     </div>
                     <div className='w-[120px] h-[40px] bg-[#05893E] rounded-[14px] text-white flex justify-center items-center mt-2'>
-                       <button>সব পণ্য দেখুন</button>
+                       <ScrolingBtn />
                     </div>
             </div>
                 <div>

@@ -6,9 +6,8 @@ import Merque from '@/component/ui/merque'
 import CardPalase from '@/component/layout/cardPalase';
 export default async function Home() {
   return (
-    <div className=" bg-[#FAFCFA] w-[1160px] py-[24px] px-[16px] mx-auto">
-      <LinkWithNav />
-      <Merque />
+    <div className=" bg-[#E1E8E1] w-[1160px] py-[24px] px-[16px] mx-auto">
+     
       <Benner />
       <CardPalase/>
      </div>

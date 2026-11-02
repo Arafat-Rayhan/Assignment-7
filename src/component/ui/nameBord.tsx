@@ -3,13 +3,13 @@ import React from 'react';
 
 const NameBord = ({N}:{N:foodData}) => {
     return (
-        <div className='flex w-[1120px] justify-start gap-4  p-[21px] rounded-[16px] p-[21px] bg-[#E1E8E1]'>
-            <div className='w-[36px] h-[40px] text-3xl'>
+        <div className='flex w-[1120px] justify-start gap-10  p-[21px] rounded-[16px] p-[21px] bg-[#F0F5F0] '>
+            <div className='w-[36px] h-[40px] text-5xl'>
                 {N.image}
             </div>
             <div>
-            <h2>{N.categoryNameBn}</h2>
-            <p>৪টি পণ্যের আজকের দাম ও পরিবর্তন</p>
+            <h2 className='font-bold text-[24px]'>{N.categoryNameBn}</h2>
+            <p className='font-normal text-[14px] text-[#1D271F]'>৪টি পণ্যের আজকের দাম ও পরিবর্তন</p>
             </div>
         </div>
     );

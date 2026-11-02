@@ -6,11 +6,11 @@ const card = ({C}:{C:foodData}) => {
         // main
         <div>
             <Link href={`/detail/${C.id}`}>
-        <div className="w-[360px] bg-[#F0F5F0] rounded-[16px] p-[16px]">
+        <div className="w-[360px] bg-[#F0F5F0] rounded-[16px] p-[16px] grid grid-cols-1 gap-[16px]  ">
             <div>
                 
                 <div className="flex gap-[12px]">
-                    <div className="w-[48px] h-[48px] bg-[#c8d3c8] rounded-[12px] flex justify-around items-center">{C.image}</div>
+                    <div className="w-[48px] h-[48px] bg-[#c8d3c8] rounded-[12px] flex justify-around items-center text-2xl">{C.image}</div>
                     <div>{C.nameBn} <br /><span>প্রতি কেজি</span></div>
                 </div>
             </div>

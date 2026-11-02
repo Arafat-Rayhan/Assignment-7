@@ -5,7 +5,6 @@ import SignInUp from '@/component/btn/sign-up-in'
 import {useSession,signOut } from '@/app/lib/auth-client' 
 import {Button} from "@heroui/react";
 
-
 export  const instant = false;
 
 const NavbaR = () => {
@@ -14,7 +13,7 @@ const NavbaR = () => {
     
 
     return (
-        <nav className='max-w-290 w-full mx-auto flex justify-between '>
+        <nav className='max-w-290 w-full h-[70px] px-[16px] py-[12px] mx-auto flex justify-between '>
             
             <div className='flex gap-2'>
                 <div className='w-10 h-10 bg-[#05893E] rounded-xl '>

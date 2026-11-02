@@ -2,6 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
+        <section id="footer-section">
+
         <div className='h-[70px] mx-auto flex justify-center items-center bg-[#FFFFFF]'>
             <div className='w-[1160px] px-[16px] flex justify-between items-center '>
 
@@ -9,6 +11,7 @@ const Footer = () => {
             <h2>সকল দাম সম্ভাব্য; বাজার অবস্থার ওপর নির্ভর করে পরিবর্তিত হয়।</h2>
             </div>
         </div>
+        </section>
     );
 };
 

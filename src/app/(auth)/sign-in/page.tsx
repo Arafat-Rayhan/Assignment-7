@@ -137,6 +137,17 @@ console.log(resData,error);
 
           {/* have you one */}
          
+            <div>
+                    <p className="mt-4 text-center text-xs text-gray-500">
+                     অ্যাকাউন্ট নেই? 
+                      <Link
+                        href="/sign-up"
+                        className="font-medium text-green-600 hover:underline"
+                        >
+                        সাইন আপ করুন
+                      </Link>
+                    </p>
+                    </div>
 
 
             </Form>

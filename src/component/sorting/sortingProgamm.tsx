@@ -34,8 +34,7 @@ const SortingProgramm = ({C}:{C:foodData[]}) => {
             text-sm font-medium text-gray-700
             shadow-sm 
            focus:border-red-500 focus:ring-2
-          focus:ring-red-100"
-  >       
+          focus:ring-red-100">       
           <option value="default">ডিফল্ট</option>
           <option value="low-to-high">কম থেকে বেশি </option>
           <option value="high-to-low">বেশি থেকে কম</option>

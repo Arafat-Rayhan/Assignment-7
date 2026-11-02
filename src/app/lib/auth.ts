@@ -3,40 +3,46 @@ import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "@better-auth/mongo-adapter";
 
+const mongoUrl = process.env.BETTER_AUTH_DB_URL;
+const mongoClient = mongoUrl ? new MongoClient(mongoUrl) : null;
 
+const socialProviders = {
+  ...(process.env.BETTER_AUTH_GOGOOL_ID && process.env.BETTER_AUTH_GOGOOL_SECRETE
+    ? {
+        google: {
+          clientId: process.env.BETTER_AUTH_GOGOOL_ID,
+          clientSecret: process.env.BETTER_AUTH_GOGOOL_SECRETE,
+        },
+      }
+    : {}),
+  ...(process.env.BETTER_GIT_ID && process.env.BETTER_GIT_SECRET
+    ? {
+        github: {
+          clientId: process.env.BETTER_GIT_ID,
+          clientSecret: process.env.BETTER_GIT_SECRET,
+        },
+      }
+    : {}),
+};
 
-
-const client = new MongoClient(process.env.BETTER_AUTH_DB_URL!);
-const db = client.db();
-
-
-console.log('auth is here');
 export const auth = betterAuth({
-     emailAndPassword: { 
-    enabled: true, 
-  }, 
-  account: {
-  accountLinking: {
+  emailAndPassword: {
     enabled: true,
-    trustedProviders: ["github", "google"] 
-  }
-},  
-
-      socialProviders: {
-        google: { 
-            clientId: process.env.BETTER_AUTH_GOGOOL_ID as string, 
-            clientSecret: process.env.BETTER_AUTH_GOGOOL_SECRETE as string, 
-        }, 
-        github: { 
-            clientId: process.env.BETTER_GIT_ID as string, 
-            clientSecret: process.env.BETTER_GIT_SECRET as string, 
-        }, 
+  },
+  account: {
+    accountLinking: {
+      enabled: true,
+      trustedProviders: ["github", "google"],
     },
-
-
-  database: mongodbAdapter(db, {
-    client,
-  }),
+  },
+  ...(Object.keys(socialProviders).length > 0 ? { socialProviders } : {}),
+  ...(mongoClient
+    ? {
+        database: mongodbAdapter(mongoClient.db(), {
+          client: mongoClient,
+        }),
+      }
+    : {}),
 });
 
 

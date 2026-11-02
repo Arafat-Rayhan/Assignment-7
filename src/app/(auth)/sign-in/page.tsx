@@ -2,38 +2,49 @@
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import {signIn} from '@/app/lib/auth-client'
 import Link from 'next/link'
+import { useRouter } from "next/navigation";
+import{toast} from 'sonner'
 
-export default function SignInPage() {
+      const SignInPage = ()=>{
+    const router= useRouter()
+    
+    const onSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.currentTarget);
+      const data: Record<string, string> = {};
+      
+      formData.forEach((value, key) => {
+        data[key] = value.toString();
+      });
+      
+      
+      const { error } = await signIn.email({
+        email: data.email,
+        password: data.password,
+      });
+      
+      if (error) {
+        return;
+      }
+      
+      toast.success(('wellcome in our merket'))
+      router.push("/");
+};
 
-    const onSubmit = async(e: React.SyntheticEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data: Record<string, string> = {};
-    // Convert FormData to plain object
-    formData.forEach((value, key) => {
-      data[key] = value.toString();
-      console.log(data);
-    });
-    const { data:resData, error } = await signIn.email({
-    email:  data.email,
-    password:data.password,
-    // callbackURL: '/'
-});
-console.log(resData,error);
 
-  };
+
+
 
   const hendelSubmitWithGogoole=async()=>{
-          const resData= await signIn.social({
+          await signIn.social({
               provider:"google"
           })
-          console.log(resData);
       }
       const hendelSubmitWithGithub=async()=>{
-          const resData= await signIn.social({
+          await signIn.social({
               provider:"github"
           })
-          console.log(resData);
       }
 
 
@@ -168,3 +179,4 @@ console.log(resData,error);
   );
 }
 
+export default SignInPage;

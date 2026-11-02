@@ -5,40 +5,47 @@ import {Button, Description, FieldError, Form, Input, Label, TextField} from "@h
 import { signUp,signIn } from '@/app/lib/auth-client';
 import Link from 'next/link'
 import {useState} from 'react'
+import { useRouter } from "next/navigation";
 
 const SignUpPage = () => {
     const [passward,setPasword]=useState('')
-   const onSubmit = async(e: React.SyntheticEvent<HTMLFormElement>) => {
+    const router = useRouter(); // কম্পোনেন্টের ভেতরে, onSubmit-এর বাইরে
+
+
+   const onSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const formData = new FormData(e.currentTarget);
     const data: Record<string, string> = {};
-    // Convert FormData to plain object
+
     formData.forEach((value, key) => {
       data[key] = value.toString();
-      console.log(data);
     });
-  
 
-    const { data:resData, error } = await signUp.email({
-    name: data.name,  
-    email: data.email,  
-    password:  data.password, 
-    callbackURL:'/sign-in',
+    const { error } = await signUp.email({
+      name: data.name,
+      email: data.email,
+      password: data.password,
     });
-    console.log(resData,error);
-  }
+
+    if (error) {
+      return;
+    }
+
+    router.push("/");
+};
+
+
 
     const hendelSubmitWithGogoole=async()=>{
-        const resData= await signIn.social({
+        await signIn.social({
             provider:"google"
         })
-        console.log(resData);
     }
     const hendelSubmitWithGithub=async()=>{
-        const resData= await signIn.social({
+        await signIn.social({
             provider:"github"
         })
-        console.log(resData);
     }
 
 

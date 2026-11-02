@@ -28,13 +28,13 @@ const SortingProgramm = ({C}:{C:foodData[]}) => {
            id="sort"
            value={sortOrder}
            onChange={(e) => setSortOrder(e.target.value)}
-           className=" cursor-pointer mx-w-[75px] [field-sizing:content] h-[32px] \r\n   h-[32px] 
+            className='cursor-pointer mx-w-[75px] [field-sizing:content] h-[32px] \\r\\n     h-[32px] 
             rounded-lg border border-gray-300
             bg-white  
             text-sm font-medium text-gray-700
             shadow-sm 
            focus:border-red-500 focus:ring-2
-          focus:ring-red-100">       
+          focus:ring-red-100'>       
           <option value="default">ডিফল্ট</option>
           <option value="low-to-high">কম থেকে বেশি </option>
           <option value="high-to-low">বেশি থেকে কম</option>

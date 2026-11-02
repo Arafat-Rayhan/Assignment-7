@@ -7,7 +7,6 @@ import "./globals.css";
 const notoSerifBengali = Noto_Serif_Bengali({
   subsets: ["latin","bengali",],
 });
-console.log(notoSerifBengali.className);
 
  
 export const metadata: Metadata = {

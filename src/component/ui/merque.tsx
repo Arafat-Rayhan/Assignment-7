@@ -9,7 +9,6 @@ import { foodData } from "@/type/type";
  
 export default async function Merque() {
   const allBazarData= await getDataByAllBazarProduct()
-  console.log(allBazarData);
   return (
     <div className="border-y border-[#E1E8E1] w-[1170px] border-solid h-9 w-full my-2">
       <MarqueeText direction='right' duration={10}>

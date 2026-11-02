@@ -10,7 +10,7 @@ const CatagoriesList= async ({params}:{params: Promise<{nameOfCatagories:string}
     const data:foodData[]=await getDataByGropOfCatagoriName({name:nameOfCatagories})
     const oneData = data[0]
     return ( 
-        <div className='w-[1160px] h-[620px] pb-[44px]  mx-auto grid grid-cols-1 gap-8   px-[16px] py-[24px]'>
+        <div className='w-[1160px] h-[720px] pb-[44px]  mx-auto grid grid-cols-1 gap-8   px-[16px] py-[24px]'>
             <NameBord N={oneData}/>
             <SortingProgramm C={data} />
             

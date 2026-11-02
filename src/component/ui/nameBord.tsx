@@ -3,8 +3,8 @@ import React from 'react';
 
 const NameBord = ({N}:{N:foodData}) => {
     return (
-        <div className='flex w-[1120px] justify-start gap-10  p-[21px] rounded-[16px] p-[21px] bg-[#F0F5F0] '>
-            <div className='w-[36px] h-[40px] text-5xl'>
+        <div className='flex w-[1120px] h-[94px] justify-start gap-10  p-[21px] rounded-[16px]  bg-[#F0F5F0] '>
+            <div className='w-[36px] h-[40px] text-6xl'>
                 {N.image}
             </div>
             <div>

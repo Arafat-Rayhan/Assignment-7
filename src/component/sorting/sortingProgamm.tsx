@@ -19,8 +19,8 @@ const SortingProgramm = ({C}:{C:foodData[]}) => {
   });
     return (
         <div>
-             <div>
-        <div className='w-[1120px] h-[65px] max-auto flex justify-end gap-3 items-center  bg-[#F0F5F0] rounded-[15px]'>
+            <div className='flex flex-col gap-10'>
+        <div className='w-[1120px] h-[65px] max-auto flex justify-end gap-4 items-center px-[24px] bg-[#F0F5F0] rounded-[15px]'>
           <h2>সাজান</h2>
           {/* w-[75px] h-[32px] border border-solid border-[#000] */}
           <div className=''>
@@ -40,7 +40,7 @@ const SortingProgramm = ({C}:{C:foodData[]}) => {
           <option value="low-to-high">কম থেকে বেশি </option>
           <option value="high-to-low">বেশি থেকে কম</option>
         </select>
-              </div>
+            </div>
         </div>
          <p>মোট {sortedProducts.length.toLocaleString("bn-BD")}টি পণ্য দেখানো হচ্ছে</p>
       <div className="grid grid-cols-3 gap-4">
@@ -51,7 +51,7 @@ const SortingProgramm = ({C}:{C:foodData[]}) => {
 
       </div> 
 
-    </div>
+              </div>
         </div>
     );
 };

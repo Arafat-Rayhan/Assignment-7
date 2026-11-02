@@ -1,7 +1,6 @@
 
 import { getDataByGropOfCatagoriName } from '@/component/getData/allData';
 import { foodData } from '@/type/type';
-import Card from '@/component/layout/card'
 import NameBord from '@/component/ui/nameBord'
 import SortingProgramm from '@/component/sorting/sortingProgamm'
 

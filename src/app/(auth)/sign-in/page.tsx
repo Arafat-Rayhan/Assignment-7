@@ -1,6 +1,7 @@
 "use client"
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import {signIn} from '@/app/lib/auth-client'
+import Link from 'next/link'
 
 export default function SignInPage() {
 
@@ -22,11 +23,41 @@ console.log(resData,error);
 
   };
 
+  const hendelSubmitWithGogoole=async()=>{
+          const resData= await signIn.social({
+              provider:"google"
+          })
+          console.log(resData);
+      }
+      const hendelSubmitWithGithub=async()=>{
+          const resData= await signIn.social({
+              provider:"github"
+          })
+          console.log(resData);
+      }
+
 
   return (
-     <div>
-        rayhan
-        <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
+    <div className=" h-auto w-[1100px]  my-[24px] flex flex-col items-center  mx-auto" >
+            {/* heder */}
+            <div className="mx-auto mb-5 text-center ">
+          <h1 className="font-bold text-gray-800 text-2xl">
+          সাইন ইন
+          </h1>
+
+              <p className="mt-1 text-xs text-gray-500">
+                বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
+              </p>
+             </div>
+
+        {/* from start */}
+        <div className='<div className="mx-auto  w-[416px] rounded-xl border border-gray-200 bg-white p-5 shadow-sm'>
+           <Form
+       className="space-y-4"
+      render={(props) => <form {...props} data-custom="foo" />}
+      onSubmit={onSubmit}
+      >
+         
       <TextField
         isRequired
         name="email"
@@ -38,8 +69,9 @@ console.log(resData,error);
           return null;
         }}
       >
-        <Label>Email</Label>
-        <Input placeholder="john@example.com" />
+        <Label className="mb-1.5 block text-sm font-medium text-gray-700"> ইমেইল</Label>
+        <Input placeholder="john@example.com" 
+         className={ 'w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-green-500 focus:ring-2 focus:ring-green-100'} />
         <FieldError />
       </TextField>
       <TextField
@@ -47,6 +79,7 @@ console.log(resData,error);
         minLength={8}
         name="password"
         type="password"
+        
         validate={(value) => {
           if (value.length < 8) {
             return "Password must be at least 8 characters";
@@ -60,22 +93,67 @@ console.log(resData,error);
           return null;
         }}
       >
-        <Label>Password</Label>
-        <Input placeholder="Enter your password" />
-        <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
+        <Label className="mb-1.5 block text-sm font-medium text-gray-700">পাসওয়ার্ড</Label>
+        <Input placeholder="Enter your password"
+         className={ 'w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-green-500 focus:ring-2 focus:ring-green-100'}  />
         <FieldError />
       </TextField>
-      <div className="flex gap-2">
-        <Button type="submit">
+         
+      
+
+          {/* 2 btn */}
+          <div className="flex gap-2">
+        <Button type="submit"
+        className="w-full rounded-md bg-green-600 py-2.5 text-sm font-medium text-white transition hover:bg-green-700 active:scale-[0.99]">
         
           Submit
         </Button>
-        <Button type="reset" variant="secondary">
+        <Button type="reset" variant="secondary"
+        className="w-full rounded-md bg-green-600 py-2.5 text-sm font-medium text-white transition hover:bg-green-700 active:scale-[0.99]">
           Reset
         </Button>
+          </div>
+
+              {/* or title */}
+           <div className="my-4 flex items-center gap-3">
+          <div className="h-px flex-1 bg-gray-200"></div>
+
+          <span className="text-xs text-gray-400">অথবা</span>
+
+          <div className="h-px flex-1 bg-gray-200"></div>
+            </div>
+
+            {/* social */}
+
+            <div className="flex justify-center">
+            
+                    <Button onClick={hendelSubmitWithGogoole}
+                     className="flex items-center justify-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 transition hover:bg-gray-50">
+                       <span className="font-bold text-red-500">𝐆</span>sign with gogoole</Button>
+                    <Button onClick={hendelSubmitWithGithub}
+                     className="flex items-center justify-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 transition hover:bg-gray-50"> <span className="font-bold text-gray-800">🐈‍⬛</span>sign with github</Button>
+                    </div>
+         
+
+          {/* have you one */}
+         
+
+
+            </Form>
+          </div>
+
+        
+          {/* go to home page */}
+
+        <div className="mt-5 text-center">
+          <Link href="/" className="text-xs text-gray-400 transition hover:text-gray-600" >
+            ← হোম পেজে ফিরে যান </Link>
+        </div>
+        
+      
+        
       </div>
-    </Form>
-     </div>
+
   );
 }
 

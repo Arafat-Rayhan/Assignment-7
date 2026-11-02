@@ -4,8 +4,10 @@
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import { signUp,signIn } from '@/app/lib/auth-client';
 import Link from 'next/link'
+import {useState} from 'react'
 
 const SignUpPage = () => {
+    const [passward,setPasword]=useState('')
    const onSubmit = async(e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -23,7 +25,7 @@ const SignUpPage = () => {
     password:  data.password, 
     callbackURL:'/sign-in',
     });
-    console.log('After',resData,error);
+    console.log(resData,error);
   }
 
     const hendelSubmitWithGogoole=async()=>{
@@ -42,9 +44,9 @@ const SignUpPage = () => {
 
     return (
       
-        <div className=" h-[520px]" >
+        <div className=" h-auto w-[1100px]  my-[24px] flex flex-col items-center  mx-auto" >
             {/* heder */}
-            <div className="mx-auto mb-5 max-w-md text-center">
+            <div className="mx-auto mb-5 text-center">
           <h1 className="text-2xl font-bold text-gray-800">
             অ্যাকাউন্ট তৈরি করুন
           </h1>
@@ -55,7 +57,7 @@ const SignUpPage = () => {
              </div>
 
         {/* from start */}
-        <div className='<div className="mx-auto max-w-md rounded-xl border border-gray-200 bg-white p-5 shadow-sm'>
+        <div className='<div className="mx-auto  w-[416px] rounded-xl border border-gray-200 bg-white p-5 shadow-sm'>
            <Form
        className="space-y-4"
       render={(props) => <form {...props} data-custom="foo" />}
@@ -72,7 +74,7 @@ const SignUpPage = () => {
             }}
           >
             <Label className="mb-1.5 block text-sm font-medium text-gray-700"> নাম</Label>
-            <Input placeholder="John Doe" 
+            <Input placeholder="name" 
              className={ 'w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-green-500 focus:ring-2 focus:ring-green-100'} />
             <FieldError />
           </TextField>
@@ -97,6 +99,7 @@ const SignUpPage = () => {
         minLength={8}
         name="password"
         type="password"
+        onChange={(e)=>setPasword(e)}
         validate={(value) => {
           if (value.length < 8) {
             return "Password must be at least 8 characters";
@@ -122,7 +125,7 @@ const SignUpPage = () => {
         name="password"
         type="password"
         validate={(value) => {
-          if (value!==value){
+          if (value!==passward){
             return "not match"
           } 
           return null;
@@ -158,7 +161,7 @@ const SignUpPage = () => {
 
 
          {/* social  */}
-        <div className="flex gap-1">
+        <div className="flex justify-center">
 
         <Button onClick={hendelSubmitWithGogoole}
          className="flex items-center justify-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 transition hover:bg-gray-50">

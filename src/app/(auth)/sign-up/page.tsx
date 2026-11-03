@@ -6,6 +6,7 @@ import { signUp,signIn } from '@/app/lib/auth-client';
 import Link from 'next/link'
 import {useState} from 'react'
 import { useRouter } from "next/navigation";
+import{toast} from 'sonner'
 
 const SignUpPage = () => {
     const [passward,setPasword]=useState('')
@@ -31,7 +32,8 @@ const SignUpPage = () => {
     if (error) {
       return;
     }
-
+    
+    toast.success(('wellcome to our merket'))
     router.push("/");
 };
 

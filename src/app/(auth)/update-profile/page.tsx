@@ -1,7 +1,9 @@
 "use client"
-import {updateUser,useSession,signOut} from '@/app/lib/auth-client'
+import {updateUser} from '@/app/lib/auth-client'
+import {toast} from 'sonner'
+import {useRouter} from  'next/navigation';
 
-import {
+import{
   Button,
   Description,
   FieldError,
@@ -19,17 +21,27 @@ type Data ={
 
 
 const Profile = () => {
-   const onSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+  const router = useRouter()
+   const onSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // reset
+    const from = e.currentTarget
+
     const formData = new FormData(e.currentTarget);
      const userData:Data = Object.fromEntries(formData.entries())
     
-    updateUser({
+    const result = await updateUser({
          name: userData.name,
         })
+
+        if(result){
+          from.reset();
+          toast.success('Profile updated successflly')
+          router.push("/")
+        }
   };
 
-   const {data:session} = useSession()
+  //  const {data:session} = useSession()
     return (
         <div className='flex justify-around items-center w-[1120px] mx-auto pb-[155px] gap-4 pt-[40px] h-[620px]'>
         

@@ -53,13 +53,15 @@ const NavbaR = () => {
 
                 <hr className="my-3" />
 
-                <Link href="/my-profile" className="block py-2">
+                <Link href="/my-profile" 
+                onClick={()=>setIsOpen(false)}
+                className="block py-2">
                   👤 আমার প্রোফাইল
                 </Link>
 
                 <button
                   className="block py-2 text-red-500"
-                  onClick={() => signOut()}
+                  onClick={() => {signOut();setIsOpen(false);}}
                 >
                   ↪ Sign Out
                 </button>

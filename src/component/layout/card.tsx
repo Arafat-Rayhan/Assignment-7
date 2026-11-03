@@ -1,11 +1,12 @@
 import { foodData } from "@/type/type";
-import Link from 'next/link';
+import LinkWithSomeProgramm from '@/component/layout/cardLink';
+import {toast} from 'sonner'
 
 const card = ({C}:{C:foodData}) => {
     return (
         // main
         <div>
-            <Link href={`/detail/${C.id}`}>
+            <LinkWithSomeProgramm C={C} key={C.id}>
         <div className="w-[360px] bg-[#F0F5F0] rounded-[16px] p-[16px] grid grid-cols-1 gap-[16px]  ">
             <div>
                 
@@ -24,7 +25,7 @@ const card = ({C}:{C:foodData}) => {
                 </div>
             </div>
         </div>
-            </Link>
+            </LinkWithSomeProgramm>
         </div>
     );
 };

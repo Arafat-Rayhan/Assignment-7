@@ -20,7 +20,7 @@ const SortingProgramm = ({C}:{C:foodData[]}) => {
     return (
         <div>
             <div className='flex flex-col gap-10'>
-        <div className='w-[1120px] h-[65px] max-auto flex justify-end gap-4 items-center px-[24px] bg-[#F0F5F0] rounded-[15px]'>
+        <div className=' h-[65px] max-auto flex justify-end gap-4 items-center px-[24px] bg-[#F0F5F0] rounded-[15px]'>
           <h2>সাজান</h2>
           {/* w-[75px] h-[32px] border border-solid border-[#000] */}
           <div className=''>

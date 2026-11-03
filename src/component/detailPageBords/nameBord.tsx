@@ -4,7 +4,7 @@ import React from 'react';
 const nameBord = ({P}:{P:foodData}) => {
     const oparation= Number(P.today) - Number(P.lastMonth);
     return (
-        <div className='w-[1120px] h-[175px]  p-[22px] mx-auto flex justify-between bg-[#ffff]  rounded-[16px] '>
+        <div className='w-full h-[175px] md:gap-40 gap-10 p-[22px] mx-auto flex justify-between bg-[#ffff]  rounded-[16px] '>
             <div className='flex justify-start items-center gap-4'>
                 <div className='w-[80px] h-[80px] text-6xl bg-[#F0F5F0] rounded-[16px]'>
                     {P.image}

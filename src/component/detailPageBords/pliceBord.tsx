@@ -6,9 +6,9 @@ const pliceBord = ({P}:{P:foodData}) => {
     const minPrice = Math.min(...price.map(i => i.min));
     const avaraze = (maxPrice + minPrice) / 2;
     return (
-        <div className='w-[1120px] mx-auto bg-[#ffff] grid grid-cols-1 gap-[24px] mt-[24px] p-[22px] rounded-[16px]'>
+        <div className=' mx-auto bg-[#ffff] grid grid-cols-1 gap-[24px] mt-[24px] p-[22px] rounded-[16px]'>
             <h2 className='font-semibold text-[18px]'>দামের সারসংক্ষেপ</h2>
-            <div className='flex justify-around'>
+            <div className='flex justify-around gap-3'>
                 {/* 3 card */}
                 <div className='w-[350px] h-[102px] rounded-[16px] py-[17px] px-[25px] bg-[#E1E8E1]'>
                     <h3>সর্বনিম্ন দাম</h3>
@@ -34,7 +34,7 @@ const pliceBord = ({P}:{P:foodData}) => {
                 <h2 className='font-semibold text-[18px] mb-5'>বাজারভিত্তিক আজকের দাম</h2>
                 {/* table */}
                 <div className='mb-[24px]'>
-                <div className='w-[1075px] h-[46px] border border-solid border-[#1D271F] flex px-[16px] py-[12px]  grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center rounded-t-[16px]'>
+                <div className=' h-[46px] border border-solid border-[#1D271F] flex px-[16px] py-[12px]  grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center rounded-t-[16px]'>
                     <span>বাজার</span>
                     <span>বিভাগ</span>
                     <span>সর্বনিম্ন</span>

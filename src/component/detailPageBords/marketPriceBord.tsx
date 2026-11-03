@@ -22,7 +22,7 @@ const MarketPriceBord = ({P}:{P:foodData}) => {
         <div>
             {result.map((J,index)=>(
 
-                <div  className='w-[1075px] h-[46px] border border-solid border-[#1D271F] flex px-[16px] py-[12px] grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center bg-[#FAFCFA] ' key={index} >
+                <div  className='h-[46px] border border-solid border-[#1D271F] flex px-[16px] py-[12px] grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center bg-[#FAFCFA] ' key={index} >
                 <span  >{J.market}</span>
                 <span  >{J.distic}</span>
                 <span  >{J.minPrice}</span>

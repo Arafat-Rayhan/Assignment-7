@@ -15,7 +15,7 @@ const NavbaR = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="max-w-290 relative z-50 w-full h-[70px] px-[16px] py-[12px] mx-auto flex justify-between">
+    <nav className="max-w-[1160px] relative z-50 w-full h-[70px] px-[16px] py-[12px] mx-auto flex justify-between">
 
       <div className="flex gap-2">
         <div className="w-10 h-10 bg-[#05893E] rounded-xl">

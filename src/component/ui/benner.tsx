@@ -3,7 +3,7 @@ import Image from 'next/image'
 import ScrolingBtn from '@/component/btn/viewBtn'
 const Benner = () => {
     return (
-       <div className='flex justify-between w-280 mx-auto bg-[#FAFCFA] border border-solid border-[#E1E8E1]         rounded-[24px] p-1 my-[24px]'>
+       <div className='flex flex-col md:flex-row md: justify-between  mx-auto bg-[#FAFCFA] border border-solid border-[#E1E8E1]         rounded-[24px] p-4 my-[24px]'>
             {/* left */}
              <div className='flex flex-col gap-6 pt-3 px-3'> 
                     <div className='text-[#035d2a] bg-[#81aa93] w-[175px] rounded-[14px] text-center'>

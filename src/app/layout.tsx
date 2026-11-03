@@ -3,6 +3,7 @@ import { Noto_Serif_Bengali } from "next/font/google";
 import Footer from '@/component/ui/footer'
 import MaimNavbar from '@/component/ui/mainNavbar'
 import "./globals.css";
+import Merque from '@/component/ui/merque'
 import { Toaster } from "sonner";
 
 const notoSerifBengali = Noto_Serif_Bengali({
@@ -21,12 +22,38 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${notoSerifBengali.className} h-full antialiased`}
     >
-      <body className="min-h-full bg-[#E1E8E1]">
-        <MaimNavbar />
-        {children}
-        <Toaster position="top-center" />
-        <Footer />
-        </body>
+      <body className="min-h-screen bg-[#E1E8E1] overflow-x-hidden">
+
+  {/* Outer Container */}
+  <div className="w-full max-w-[1440px] mx-auto">
+  
+
+    {/* Navbar */}
+    <div className="w-full max-w-[1200px] mx-auto">
+      <MaimNavbar />
+    </div>
+
+    {/* Marquee */}
+    <div className="w-full max-w-[1440px] mx-auto">
+      <Merque />
+    </div>
+
+  
+    {/* Page */}
+    <main className="w-full max-w-[1200px] mx-auto">
+      {children}
+    </main>
+
+    <Toaster position="top-center" />
+
+    {/* Footer */}
+    <div className="w-full max-w-[1200px] mx-auto">
+      <Footer />
+    </div>
+
+  </div>
+
+</body>
     </html>
   );
 }

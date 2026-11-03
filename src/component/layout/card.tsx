@@ -7,7 +7,7 @@ const card = ({C}:{C:foodData}) => {
         // main
         <div>
             <LinkWithSomeProgramm C={C} key={C.id}>
-        <div className="w-[360px] bg-[#F0F5F0] rounded-[16px] p-[16px] grid grid-cols-1 gap-[16px]  ">
+        <div className="w-full bg-[#F0F5F0] rounded-[16px] p-[16px] grid grid-cols-1 gap-[16px]  ">
             <div>
                 
                 <div className="flex gap-[12px]">

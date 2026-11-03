@@ -53,7 +53,7 @@ const SignUpPage = () => {
 
     return (
       
-        <div className=" h-auto w-[1100px]  my-[24px] flex flex-col items-center  mx-auto" >
+        <div className=" h-auto   my-[24px] flex flex-col items-center  mx-auto" >
             {/* heder */}
             <div className="mx-auto mb-5 text-center">
           <h1 className="text-2xl font-bold text-gray-800">

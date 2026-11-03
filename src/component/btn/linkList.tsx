@@ -12,10 +12,10 @@ import LinkOn from '@/component/btn/linkOn'
 const LinkLinst =async () => {
     const data:DataOfC[] = await getDataByAllCatagories()
     return (
-        <div className='flex w-full justify-start  mx-auto  ' >
+        <div className='flex flex-wrap w-full justify-start  sm:gap-1  mx-auto  ' >
             {
                 data.map((C)=>(
-                    <LinkOn C={C} key={C.id} />
+                   <LinkOn C={C} key={C.id} />
 
                 ))
             }

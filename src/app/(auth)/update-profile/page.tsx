@@ -43,11 +43,11 @@ const Profile = () => {
 
   //  const {data:session} = useSession()
     return (
-        <div className='flex justify-around items-center w-[1120px] mx-auto pb-[155px] gap-4 pt-[40px] h-[620px]'>
+        <div className='flex justify-around items-center  mx-auto pb-[155px] gap-4 pt-[40px] h-[620px]'>
         
 
 
-            <div className='w-[735px] bg-[#FAFCFA] rounded-[16px] flex p-[24px] pl-[40px]'>
+            <div className='md:w-[735px] bg-[#FAFCFA] rounded-[16px] flex p-[24px] pl-[40px]'>
             <Form className="w-full max-w-96" onSubmit={onSubmit}>
             <Fieldset>
              <FieldGroup>
@@ -62,7 +62,7 @@ const Profile = () => {
             }}
           >
             <Label className='font-semibold text-[18px]'>তথ্য</Label>
-            <Input placeholder="new name" className={'w-[645px] h-[40px]'} />
+            <Input placeholder="new name" className={'md:w-[645px] w-[300px] h-[40px]'} />
             <FieldError />
           </TextField>
           

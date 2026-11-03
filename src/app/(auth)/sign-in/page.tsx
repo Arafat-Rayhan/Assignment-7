@@ -50,7 +50,7 @@ import{toast} from 'sonner'
 
 
   return (
-    <div className=" h-auto w-[1100px]  my-[24px] flex flex-col items-center  mx-auto" >
+    <div className=" h-auto   my-[24px] flex flex-col items-center  mx-auto" >
             {/* heder */}
             <div className="mx-auto mb-5 text-center ">
           <h1 className="font-bold text-gray-800 text-2xl">

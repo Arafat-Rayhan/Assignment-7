@@ -14,8 +14,8 @@ const LinkOn = ({ C }: { C:DataOfC}) => {
   const href = `/catagories/${C.id}`
   const isActive = pathName === href;
     return (
-        <div className={`gap-1.5 px-4 py-2 rounded-lg flex justify-start ${isActive ? "bg-green-600" : ""} `}>
-        <span>{C.icon}</span>
+        <div className={`gap-1.5 px-4 py-2 rounded-lg  flex justify-start sm:flex-co1 ${isActive ? "bg-green-600" : ""} `}>
+        <div><span>{C.icon}</span></div>
       <Link href={`/catagories/${C.id}`} className="flex items-center gap-1">
         {C.nameBn}
       </Link>

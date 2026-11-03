@@ -10,11 +10,11 @@ const Profile = () => {
 
    const {data:session} = useSession()
     return (
-        <div className='flex flex-col items-center w-[1120px] mx-auto pb-[155px] gap-4 pt-[40px] h-[520px]'>
+        <div className='flex flex-col items-center  mx-auto px[2px] pb-[155px] gap-4 pt-[40px] h-[520px]'>
             {/* two btn wtith condition  and dropdwon*/}
             <h2 className='font-bold text-[24px]'>আমার প্রোফাইল</h2>
             <p>আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।</p>
-            <div className='w-[735px] h-[120px] rounded-[16px] flex justify-between items-center p-[25px] bg-[#FAFCFA]'>
+            <div className='md:w-[735px] h-[120px] rounded-[16px] flex justify-between items-center p-[25px] bg-[#FAFCFA]'>
 
                 <div>
                 <h2>{session?.user.name}</h2>
@@ -25,7 +25,7 @@ const Profile = () => {
                 </div>
             </div>
 
-            <Link href="/update-profile" className="  rounded-md bg-green-600 py-2.5 text-sm font-medium text-white transition hover:bg-green-700 active:scale-[0.99] w-[720px] text-center font-bold text-3xl ">Up data profile</Link>
+            <Link href="/update-profile" className="  rounded-md bg-green-600 py-2.5 text-sm font-medium text-white transition hover:bg-green-700 active:scale-[0.99] md:w-[720px] w-[300px] text-center font-bold text-3xl ">Up data profile</Link>
 
         </div>
     

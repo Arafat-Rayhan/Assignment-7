@@ -29,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   
 
     {/* Navbar */}
-    <div className="w-full max-w-[1200px] mx-auto">
+    <div className="w-full max-w-[1440px] mx-auto">
       <MaimNavbar />
     </div>
 
@@ -47,7 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <Toaster position="top-center" />
 
     {/* Footer */}
-    <div className="w-full max-w-[1200px] mx-auto">
+    <div className="w-full max-w-[1440px] mx-auto">
       <Footer />
     </div>
 

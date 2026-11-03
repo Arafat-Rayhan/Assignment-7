@@ -7,11 +7,11 @@ const mongoUrl = process.env.BETTER_AUTH_DB_URL;
 const mongoClient = mongoUrl ? new MongoClient(mongoUrl) : null;
 
 const socialProviders = {
-  ...(process.env.BETTER_AUTH_GOOLE_ID && process.env.BETTER_AUTH_GOOLE_SECRETE
+  ...(process.env.BETTER_AUTH_GOOGLE_ID && process.env.BETTER_AUTH_GOOGLE_SECRETE
     ? {
         google: {
-          clientId: process.env.BETTER_AUTH_GOOLE_ID,
-          clientSecret: process.env.BETTER_AUTH_GOOLE_SECRETE,
+          clientId: process.env.BETTER_AUTH_GOOGLE_ID,
+          clientSecret: process.env.BETTER_AUTH_GOOGLE_SECRETE,
         },
       }
     : {}),
